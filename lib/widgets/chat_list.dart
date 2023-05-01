@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:whatsapp_full_stack/colors.dart';
 import 'package:whatsapp_full_stack/info.dart';
 import 'package:whatsapp_full_stack/widgets/my_message_card.dart';
+import 'package:whatsapp_full_stack/widgets/sender_message_card.dart';
 
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
@@ -19,9 +20,9 @@ class ChatList extends StatelessWidget {
             date: messages[index]["time"].toString(),
           );
         }
-        // return senderMessageCard(
-
-        // )
+        return SenderMessageCard(
+            message: messages[index]["text"].toString(),
+            date: messages[index]["time"].toString());
       },
     );
   }

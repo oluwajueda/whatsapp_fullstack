@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_full_stack/colors.dart';
 import 'package:whatsapp_full_stack/screens/mobile_chat_screen.dart';
+import 'package:whatsapp_full_stack/screens/mobile_layout_screen.dart';
 import 'package:whatsapp_full_stack/screens/web_layout_screen.dart';
 import 'package:whatsapp_full_stack/utils/responsive_layout.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
       ),
       home: const ResponsiveLayout(
-        mobileScreenLayout: MobileChatScreen(),
+        mobileScreenLayout: MobileLayoutScreen(),
         webScreenLayout: WebLayoutScreen(),
       ),
     );
