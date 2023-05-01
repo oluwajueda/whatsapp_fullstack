@@ -1,11 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_full_stack/colors.dart';
+import 'package:whatsapp_full_stack/features/landing/screens/landing_screen.dart';
+import 'package:whatsapp_full_stack/firebase_options.dart';
+import 'package:whatsapp_full_stack/router.dart';
 import 'package:whatsapp_full_stack/screens/mobile_chat_screen.dart';
 import 'package:whatsapp_full_stack/screens/mobile_layout_screen.dart';
 import 'package:whatsapp_full_stack/screens/web_layout_screen.dart';
 import 'package:whatsapp_full_stack/utils/responsive_layout.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -15,15 +23,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Whatsapp UI',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: backgroundColor,
-      ),
-      home: const ResponsiveLayout(
-        mobileScreenLayout: MobileLayoutScreen(),
-        webScreenLayout: WebLayoutScreen(),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Whatsapp UI',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: backgroundColor,
+        ),
+        onGenerateRoute: (settings) => generateRoute(settings),
+        home: const LandingScreen());
   }
 }
