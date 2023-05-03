@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 class OTPScreen extends StatefulWidget {
   static const String routeName = "/otp-screen";
-  const OTPScreen({super.key});
+  final String verificationId;
+  const OTPScreen({super.key, required this.verificationId});
 
   @override
   State<OTPScreen> createState() => _OTPScreenState();
