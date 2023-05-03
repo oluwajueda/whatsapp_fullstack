@@ -20,20 +20,22 @@ class AuthRepository {
   void signInWithPhone(BuildContext context, String phoneNumber) async {
     try {
       await auth.verifyPhoneNumber(
-          verificationCompleted: (PhoneAuthCredential credential) async {
-            await auth.signInWithCredential(credential);
-          },
-          verificationFailed: (e) {
-            throw Exception(e.message);
-          },
-          codeSent: ((String verificationId, int? resendToken) {
-            Navigator.pushNamed(
-              context,
-              OTPScreen.routeName,
-              arguments: verificationId,
-            );
-          }),
-          codeAutoRetrievalTimeout: (String verification) {});
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (e) {
+          throw Exception(e.message);
+        },
+        codeSent: ((String verificationId, int? resendToken) async {
+          Navigator.pushNamed(
+            context,
+            OTPScreen.routeName,
+            arguments: verificationId,
+          );
+        }),
+        codeAutoRetrievalTimeout: (String verificationId) {},
+      );
     } on FirebaseAuthException catch (e) {
       showSnackBar(context: context, content: e.message!);
     }

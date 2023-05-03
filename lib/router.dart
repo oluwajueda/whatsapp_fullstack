@@ -10,7 +10,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case OTPScreen.routeName:
       final verificationId = settings.arguments as String;
       return MaterialPageRoute(
-          builder: (context) => OTPScreen(
+          builder: (context) =>  OTPScreen(
                 verificationId: verificationId,
               ));
     default:
