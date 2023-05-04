@@ -7,8 +7,6 @@ import 'package:whatsapp_full_stack/firebase_options.dart';
 import 'package:whatsapp_full_stack/router.dart';
 import 'package:whatsapp_full_stack/screens/mobile_chat_screen.dart';
 import 'package:whatsapp_full_stack/screens/mobile_layout_screen.dart';
-import 'package:whatsapp_full_stack/screens/web_layout_screen.dart';
-import 'package:whatsapp_full_stack/utils/responsive_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
