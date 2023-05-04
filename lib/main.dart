@@ -5,8 +5,6 @@ import 'package:whatsapp_full_stack/colors.dart';
 import 'package:whatsapp_full_stack/features/landing/screens/landing_screen.dart';
 import 'package:whatsapp_full_stack/firebase_options.dart';
 import 'package:whatsapp_full_stack/router.dart';
-import 'package:whatsapp_full_stack/screens/mobile_chat_screen.dart';
-import 'package:whatsapp_full_stack/screens/mobile_layout_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
