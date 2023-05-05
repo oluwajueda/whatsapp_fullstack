@@ -43,7 +43,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           .read(authControllerProvider)
           .signInWithPhone(context, '+${country!.phoneCode}$phoneNumber');
     } else {
-      showSnackBar(context: context, content: 'Fill out all the fields');
+      String content = "Fill all the content";
+      showSnackBar(context: context, content: content);
     }
   }
 

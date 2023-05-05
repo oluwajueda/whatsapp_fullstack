@@ -10,6 +10,8 @@ class LandingScreen extends StatelessWidget {
     Navigator.pushNamed(context, LoginScreen.routeName);
   }
 
+  final String welcome = 'Welcome to WhatsApp';
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -20,8 +22,8 @@ class LandingScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 50),
-            const Text(
-              'Welcome to WhatsApp',
+            Text(
+              welcome,
               style: TextStyle(
                 fontSize: 33,
                 fontWeight: FontWeight.w600,
