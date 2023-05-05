@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:whatsapp_full_stack/colors.dart';
 
 class MyMessageCard extends StatelessWidget {
